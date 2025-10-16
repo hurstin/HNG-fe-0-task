@@ -1,0 +1,309 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Profile card container */
+article[data-testid='test-profile-card'] {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Mobile-first: Stack layout */
+.profile-section {
+  padding: 30px 30px 0;
+  text-align: center;
+}
+
+.profile-avatar {
+  margin-bottom: 20px;
+}
+
+.profile-avatar figure {
+  display: inline-block;
+  margin: 0;
+}
+
+.profile-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #667eea;
+  transition: transform 0.3s ease;
+}
+
+.profile-avatar img:hover {
+  transform: scale(1.05);
+}
+
+.profile-avatar figcaption {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+.profile-content {
+  padding: 0 30px 30px;
+}
+
+/* Header styles */
+header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Bio text */
+[data-testid='test-user-bio'] {
+  color: #4a5568;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.7;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Time display */
+.profile-time-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 25px;
+  padding: 12px;
+  background: #f7fafc;
+  border-radius: 10px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.9rem;
+}
+
+.profile-time-row .icon {
+  font-size: 1rem;
+}
+
+[data-testid='test-user-time'] {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+/* Social links */
+[data-testid='test-user-social-links'] {
+  margin-bottom: 25px;
+}
+
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-list a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.social-list a:hover,
+.social-list a:focus {
+  background: #5a6fd8;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.social-list a:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
+
+/* Hobbies and Dislikes sections */
+[data-testid='test-user-hobbies'],
+[data-testid='test-user-dislikes'] {
+  margin-bottom: 20px;
+}
+
+[data-testid='test-user-hobbies'] label,
+[data-testid='test-user-dislikes'] label {
+  display: block;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+[data-testid='test-user-hobbies'] ul,
+[data-testid='test-user-dislikes'] ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+[data-testid='test-user-hobbies'] li,
+[data-testid='test-user-dislikes'] li {
+  background: #edf2f7;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+/* Truncation for long content with expand on focus/hover */
+[data-testid='test-user-bio'] {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+[data-testid='test-user-bio']:hover,
+[data-testid='test-user-bio']:focus {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* Tablet styles (768px and up) */
+@media (min-width: 768px) {
+  .profile-section {
+    padding: 40px 40px 0;
+  }
+
+  .profile-content {
+    padding: 0 40px 40px;
+  }
+
+  .profile-avatar img {
+    width: 140px;
+    height: 140px;
+  }
+
+  header h2 {
+    font-size: 2rem;
+  }
+
+  .social-list {
+    gap: 20px;
+  }
+
+  .social-list a {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop styles (1024px and up) - Side by side layout */
+@media (min-width: 1024px) {
+  article[data-testid='test-profile-card'] {
+    display: flex;
+    max-width: 900px;
+  }
+
+  .profile-section {
+    flex: 0 0 300px;
+    padding: 40px;
+    text-align: left;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .profile-content {
+    flex: 1;
+    padding: 40px;
+  }
+
+  .profile-avatar {
+    margin-bottom: 30px;
+  }
+
+  .profile-avatar img {
+    width: 160px;
+    height: 160px;
+  }
+
+  header h2 {
+    text-align: left;
+    font-size: 2.25rem;
+  }
+
+  [data-testid='test-user-bio'] {
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
+  .profile-time-row {
+    justify-content: flex-start;
+  }
+
+  .social-list {
+    justify-content: flex-start;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .profile-avatar img:hover {
+    transform: none;
+  }
+
+  .social-list a:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .profile-avatar img {
+    border: 3px solid #000;
+  }
+
+  .social-list a {
+    border: 2px solid #000;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
+}

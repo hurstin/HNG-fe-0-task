@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article data-testid="test-profile-card" aria-label="User Profile Card">
+      <section class="profile-section">
+        <div class="profile-avatar">
+          <figure data-testid="test-user-avatar">
+            <img
+              id="avatar-img"
+              src="./static/IMG_0303.jpeg"
+              alt="User avatar"
+            />
+            <figcaption>Profile Avatar</figcaption>
+          </figure>
+        </div>
+      </section>
+      <div class="profile-content">
+        <header>
+          <h2 data-testid="test-user-name" aria-label="User Name">
+            Okechukwu Augustine
+          </h2>
+        </header>
+        <p data-testid="test-user-bio">
+          Frontend developer passionate about building accessible, beautiful
+          interfaces. Loves learning new frameworks.
+        </p>
+        <div class="profile-time-row">
+          <span class="icon" aria-hidden="true">⏰</span>
+          <span data-testid="test-user-time" id="current-time"></span>
+        </div>
+        <nav data-testid="test-user-social-links" aria-label="Social Links">
+          <ul class="social-list">
+            <li>
+              <a
+                href="https://x.com/hurstin_"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-twitter"
+                tabindex="0"
+                aria-label="Twitter"
+              >
+                <span aria-hidden="true">🐦</span> Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/hurstin"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-github"
+                tabindex="0"
+                aria-label="GitHub"
+              >
+                <span aria-hidden="true">💻</span> GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/augustine-okechukwu-248566190/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-linkedin"
+                tabindex="0"
+                aria-label="LinkedIn"
+              >
+                <span aria-hidden="true">🔗</span> LinkedIn
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <section data-testid="test-user-hobbies" aria-label="Hobbies">
+          <label>Hobbies:</label>
+          <ul>
+            <li>Playing game</li>
+            <li>Coding</li>
+            <li>watching anime</li>
+          </ul>
+        </section>
+        <section data-testid="test-user-dislikes" aria-label="Dislikes">
+          <label>Dislikes:</label>
+          <ul>
+            <li>Stress</li>
+            <li>Tardiness</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+    <script src="script.js"></script>
+  </body>
+</html>
