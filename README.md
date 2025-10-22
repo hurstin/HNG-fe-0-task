@@ -2,59 +2,62 @@
 
 Simple static profile card demo with live time and avatar support.
 
+## Features
+
+- Responsive, accessible profile card (desktop & mobile)
+- Live timestamp updated by the [`updateTime`](script.js) function
+- Avatar image (default in `static/IMG_0303.jpeg`) with optional client-side upload
+- Contact form with client-side validation handled by [`contact.js`](contact.js)
+- Clean, modern styles in [styles.css](styles.css)
+
 ## Files
 
-- [index.html](index.html) — main HTML file
-- [styles.css](styles.css) — styles for the profile card
+- [index.html](index.html) — main profile card page
+- [about.html](about.html) — about / reflections page
+- [contact.html](contact.html) — contact form page
+- [styles.css](styles.css) — stylesheet
 - [script.js](script.js) — small JS for the live time (function: [`updateTime`](script.js)) and avatar handling
+- [contact.js](contact.js) — contact form validation and UX
 - [static/IMG_0303.jpeg](static/IMG_0303.jpeg) — default avatar image
-
-## Requirements
-
-- A web browser (Chrome, Firefox, Safari, Edge)
-- (Optional) Python 3 or Node.js for serving over HTTP
+- [README.md](README.md) — this file
 
 ## Run locally
 
 Option A — Open directly
 
-- Open [index.html](index.html) in your browser (double-click or "Open File").
+- Open [index.html](index.html) in your browser.
 
-Option B — Python (recommended when using fetch/XHR or avoiding file:// issues)
+Option B — Quick HTTP server (recommended)
 
-- Run from project root:
+- Python:
 
 ```sh
 python3 -m http.server 8000
+# then visit http://localhost:8000/
 ```
 
-- Open http://localhost:8000/ in your browser.
-
-Option C — Node (live-server)
-
-- If you have Node.js:
+- Node (live-server):
 
 ```sh
 npx live-server .
 ```
 
-or
+Option C — VS Code Live Server
 
-```sh
-npm install -g live-server
-live-server
-```
-
-Option D — VS Code
-
-- Install the "Live Server" extension and click "Go Live" with this workspace open.
+- Install "Live Server" extension and click "Go Live".
 
 ## Notes for developers
 
-- The live timestamp is updated by the [`updateTime`](script.js) function and written into the element with id `current-time` in [index.html](index.html).
-- Avatar upload in [script.js](script.js) expects an input with id `avatar-input` to exist in the DOM to allow file uploads.
-- Styles live in [styles.css](styles.css). Adjust breakpoints and sizes there.
+- Live timestamp: see [`updateTime`](script.js) which writes into the element with id `current-time` in [index.html](index.html).
+- Avatar upload: `script.js` expects an input with id `avatar-input` (add to the DOM if you want upload UI).
+- Contact form: validation rules and UX are implemented in [contact.js](contact.js). Error elements in [contact.html](contact.html) have matching IDs like `name-error`, `email-error`, etc.
+- Styles: adjust breakpoints and sizes in [styles.css](styles.css).
+
+## Contributing
+
+- Open an issue or create a PR with improvements. Keep changes small and focused.
+- Run a local server to test pages and scripts (see Run locally).
 
 ## License
 
-This is a small demo — include your preferred license if you publish
+- This demo is provided as-is. Add a license if you publish.
